@@ -1,28 +1,8 @@
 # Roadmap
 
-## Phase 1: Repository Setup
-- Projektstruktur definieren
-- Workflows konfigurieren
-- Review-Regeln etablieren
-- CI aktivieren
-
-## Phase 2: App Foundation
-- Technologie-Setup
-- Design-System
-- App-Architektur
-- Startbildschirm
-
-## Phase 3: Core Features
-- Onboarding
-- Trainingsplaner
-- Fortschrittsverfolgung
-
-## Phase 4: Motivation
-- Ziele
-- Streaks
-- Reminders
-
-## Phase 5: Release
-- QA
-- Bugfixes
-- Publishing
+- [x] Expo-Projekt mit Navigation und Startbildschirm einrichten.
+- [x] Lint, Typecheck und Web-Build in der CI ausführen.
+- [ ] Watchlist mit manuell hinzugefügten Symbolen und lokaler Speicherung entwickeln.
+- [ ] Trading-Journal für manuelle Einträge und Rückblick entwickeln.
+- [ ] Datenquelle für Kurse auswählen und Lade- sowie Fehlerzustände abbilden.
+- [ ] Kernabläufe auf Android, iOS und im Web prüfen.

@@ -4,14 +4,14 @@ Danke, dass ihr an diesem Projekt mitarbeitet.
 
 ## Branching
 
-- main: stabiler Branch
+- master: stabiler Branch
 - feature/<name>: Features und Änderungen
 - bugfix/<name>: Fehlerbehebungen
 - hotfix/<name>: kritische Korrekturen
 
 ## Regeln
 
-- Keine direkten Commits auf main
+- Keine direkten Commits auf master
 - Pull Requests sind Pflicht
 - Jede Änderung braucht mindestens 1 Review
 - Beschreibende Commit-Nachrichten

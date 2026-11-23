@@ -1,69 +1,37 @@
-# EineMillionEuro Fitness
+# TradingApp
 
-Gemeinsame Entwicklung einer mobilen Fitness-App.
+Gemeinsame Entwicklung einer mobilen Trading-App mit Expo, React Native und TypeScript. Der aktuelle Stand umfasst den Startbildschirm und das Entwicklungsgerüst. Die geplanten Funktionen stehen in der [Roadmap](docs/ROADMAP.md).
 
-## So arbeitet ihr zusammen
+## Lokal starten
 
-### 1. Repository öffnen
+Voraussetzung ist Node.js 24 (ab 24.3.0).
 
-Öffne den Ordner in VS Code:
-- Datei → Ordner öffnen
-- Wähle: einemillioneuro
+```bash
+npm ci
+npm start
+```
 
-### 2. Dateien ändern
+Mit `npm run web` startest du die Web-Version. Mit `npm run android` oder `npm run ios` öffnest du die App aus Metro auf einem verfügbaren Emulator oder Simulator. Der iOS-Simulator benötigt macOS.
 
-Bearbeite die Dateien, die du ändern möchtest.
+## Projektstruktur
 
-### 3. Speichern und hochladen
+- `src/app/` enthält die Expo-Router-Routen und das gemeinsame Layout. Gemeinsame Komponenten und Fachlogik liegen bei Bedarf außerhalb des Routenordners.
+- `assets/` enthält die App- und Web-Symbole.
+- `docs/ROADMAP.md` beschreibt die nächsten Entwicklungsschritte.
+- `.github/` enthält die CI sowie Vorlagen für Issues und Pull Requests.
 
-Unten links in VS Code:
-- Klick auf "Source Control" (Verzweigungssymbol)
-- Gib eine kurze Nachricht ein: z.B. "Trainingsplaner hinzugefügt"
-- Klick auf "Commit and push" oder "Sync"
+## Vor dem Pull Request
 
-Das war's. Deine Änderungen sind jetzt auf GitHub.
+```bash
+npm run lint
+npm run typecheck
+npm run build:web
+```
 
-## Wichtig
+Die CI führt dieselben Prüfungen aus. Weitere Informationen zum [Beitragen](contributing.md).
 
-- Speichert regelmäßig eure Änderungen
-- Schreibt kurz auf, was ihr geändert habt
-- Alle arbeiten zusammen am selben main-Branch
+## Kursdaten im Aktien-Tab
 
-## FAQ für Einsteiger
+Der Tab zeigt eine feste Auswahl von zehn großen US-Unternehmen. Die Detailansicht bietet Tagesschlusskurse in USD für eine Woche, einen Monat, drei Monate, sechs Monate und ein Jahr.
 
-### Wie öffne ich das Repository?
-- In VS Code auf "Datei" → "Ordner öffnen"
-- Den Ordner "einemillioneuro" auswählen
-
-### Was ist "main"?
-- "main" ist der Hauptzweig des Projekts
-- Dort liegt die aktuelle zentrale Version
-
-### Was ist ein Commit?
-- Ein Commit ist eine gespeicherte Version deiner Änderungen
-- Du gibst ihm eine kurze Beschreibung, z.B. "Trainingsplaner hinzugefügt"
-
-### Was ist ein Push?
-- Ein Push lädt deine Änderungen auf GitHub hoch
-- Danach sind deine Dateien im Repository sichtbar
-
-### Wo landen meine Daten?
-- Wenn du in VS Code speicherst, bleiben sie lokal im Projektordner
-- Wenn du commitest und pushest, landen sie auf GitHub im aktuellen Branch
-
-### Wie speichere ich meine Änderungen?
-- In VS Code links unten auf "Source Control" klicken
-- Nachricht eingeben
-- Auf "Commit and push" oder "Sync" klicken
-
-### Wie kann ich später sauber arbeiten?
-- Später sollte jeder in einem eigenen Branch arbeiten
-- Das verhindert Konflikte mit den Arbeiten anderer
-
-### Was ist ein Branch?
-- Ein eigener Arbeitsbereich für eine Aufgabe
-- Beispiel: feature/trainingsplaner
-
-### Was ist ein Pull Request?
-- Ein Vorschlag, Änderungen in den Hauptzweig zu übernehmen
-- Dadurch kann man die Änderungen prüfen, bevor sie übernommen werden
+Auf Android und iOS versucht die App den Abruf über den öffentlichen Chart-Endpunkt von Yahoo Finance. Im Web wird standardmäßig ein gekennzeichneter Beispielverlauf angezeigt. Mit `EXPO_PUBLIC_STOCK_CHART_URL` lässt sich für alle Plattformen eine andere Basis-URL setzen. Diese muss `/SYMBOL?range=1y&interval=1d` im Yahoo-Chart-Format liefern und im Web CORS für den App-Ursprung erlauben. Die Basis-URL ist öffentlich sichtbar. Wenn der Abruf scheitert, zeigt die App gekennzeichnete simulierte Kurse.

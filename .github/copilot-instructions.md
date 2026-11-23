@@ -2,7 +2,7 @@
 
 ## Projektkontext
 
-Dieses Repository ist die Grundlage für die gemeinsame Entwicklung einer mobilen Fitness-App.
+Dieses Repository ist die Grundlage für die gemeinsame Entwicklung einer mobilen Trading-App.
 
 ## Arbeitsweise
 
